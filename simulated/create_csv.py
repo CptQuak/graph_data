@@ -7,9 +7,11 @@ import subprocess
 # utils and src from ABCD_generator.jl
 julia = "/home/quak/julia-1.10.8/bin/julia"
 
-n_s = [1000]
-o_s = [i for i in [10, 30, 50, 70,100, 200]]
-eps_s = [i/10 for i in [1, 3, 5, 7]]
+n_s = [10000]
+o_s = [500]
+eps_s = [0.7, 0.3]
+# o_s = [i for i in [10, 30, 50, 70,100, 200]]
+# eps_s = [i/10 for i in [1, 3, 5, 7]]
 
 
 for n, o, eps in product(n_s, o_s, eps_s):
