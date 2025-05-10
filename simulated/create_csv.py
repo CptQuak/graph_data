@@ -22,11 +22,11 @@ for n, o, eps in product(n_s, o_s, eps_s):
     
     subprocess.run(f"{julia} ../utils/deg_sampler.jl\
                    {folder_name}/degrees.dat\
-                   2.5 5 50 {n} 10000 42 {o}", shell=True, stdout=subprocess.PIPE)
+                   2.5 5 25 {n} 10000 42 {o}", shell=True, stdout=subprocess.PIPE)
                     # τ₁ d_min d_max n max_iter
     subprocess.run(f"{julia} ../utils/com_sampler.jl\
                    {folder_name}/community_sizes.dat\
-                   1.5 50 200 {n} 10000 42 {o}", shell=True, stdout=subprocess.PIPE)
+                   1.5 500 2000 {n} 10000 42 {o}", shell=True, stdout=subprocess.PIPE)
                     # τ₂ c_min c_max n max_iter
     subprocess.run(f"{julia} ../utils/graph_sampler.jl\
                    {folder_name}/edge.dat\
