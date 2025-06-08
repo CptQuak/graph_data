@@ -7,8 +7,8 @@ import subprocess
 # utils and src from ABCD_generator.jl
 julia = "/home/quak/julia-1.10.8/bin/julia"
 
-n_s = [100_000]
-o_s = [5000]
+n_s = [10000]
+o_s = [100]
 eps_s = [0.7, 0.3]
 # o_s = [i for i in [10, 30, 50, 70,100, 200]]
 # eps_s = [i/10 for i in [1, 3, 5, 7]]
@@ -26,7 +26,7 @@ for n, o, eps in product(n_s, o_s, eps_s):
                     # τ₁ d_min d_max n max_iter
     subprocess.run(f"{julia} ../utils/com_sampler.jl\
                    {folder_name}/community_sizes.dat\
-                   1.5 2000 15000 {n} 10000 42 {o}", shell=True, stdout=subprocess.PIPE)
+                   1.5 200 1500 {n} 10000 42 {o}", shell=True, stdout=subprocess.PIPE)
                     # τ₂ c_min c_max n max_iter
     subprocess.run(f"{julia} ../utils/graph_sampler.jl\
                    {folder_name}/edge.dat\

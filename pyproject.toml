@@ -1,0 +1,7 @@
+[project]
+name = "test"
+version = "0.1"
+dependencies = [
+    "numpy>=2.3.0",
+    "pandas>=2.3.0",
+]
